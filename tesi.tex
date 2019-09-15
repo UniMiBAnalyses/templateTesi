@@ -1,0 +1,91 @@
+\documentclass[12pt,twoside,a4paper,fleqn,openright]{book}
+
+% 11pt         e' la dimensione del carattere
+% twoside      e' per avere fronte/retro
+% a4paper      si spiega da solo
+% fleqn        e' per avere le equazioni allineate a sx
+% openright    e' per iniziare i capitoli sempre a destra
+
+% \usepackage[english,italian]{babel}  % per la lingua: cambia il nome dei capitoli in italiano
+\usepackage[dvips]{graphicx}         % per inserire le immagini
+\usepackage{verbatim}                % per usare \begin{comment}
+\usepackage{syntonly}                % per usare il comando syntaxonly
+\usepackage{subfigure}               % per strutturare le immagni
+\usepackage{fancyheadings}           % per la righetta fottuta & co.
+%\usepackage{rotating}                % chissa' a che serve?
+
+
+%syntaxonly       % per eseguire solo un controllo sintattico, senza compilare
+\linespread{1.2}  % Per avere una maggiore interlinea. Se si dovesse cambiare, attenzione ai 
+                  % comandi dati per l'interlinea delle caption. 
+
+\author{Mario Rossi}
+\title{TESI DI LAUREA}
+
+
+
+\begin{document}
+
+
+
+%\pagestyle{headings}
+
+\maketitle
+
+\pagestyle{empty}
+
+\tableofcontents
+
+
+\pagestyle{fancyplain}
+\addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+% remember chapter title
+\renewcommand{\chaptermark}[1]{\markboth{{\chaptername\ \thechapter}\ \--- #1}{}} %{\markboth{#1}{#1}}
+% section number and title
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ \ #1}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\emph\rightmark}}
+\rhead[\fancyplain{}{\emph\leftmark}]{\fancyplain{}{\thepage}}
+\cfoot{}
+
+\include{introduzione}         % introduzione alla tesi (da scrivere ancora)
+\include{capitolo_1}          % l'esperimento HARP ed i singoli sottorivelatori, grandi linee
+\include{capitolo_2}            % le RPC testate in laboratorio con Dydak
+\include{capitolo_3}       % come funziona una RPC
+\include{conclusioni}         
+\include{bibliografia}         
+
+% INIZIO COMMENTO
+\begin{comment} 
+
+% quello che sta qui non viene compilato
+
+\listoffigures
+
+\listoftables
+
+\end{comment}
+% FINE COMMENTO
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
